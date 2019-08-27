@@ -3,6 +3,7 @@ public class Books implements LibraryBooks
     String title, author, condit;
     boolean BookcheckOut=false;
     int barcode, studentId;
+    public int newBarcode= 00000000;
     public Books()
     {
         title="N/A";
@@ -12,15 +13,43 @@ public class Books implements LibraryBooks
         studentId = 000000;
     }//end of default constructor
 
-    public Books(String title, String author, String condit, boolean BookcheckOut, int barcode, int studentId)
+    public Books(String title, String author, String condit, boolean BookcheckOut)
     {
+        newBarcode++;
         this.title = title;
         this.author = author;
         this.condit = condit;
         this.BookcheckOut = BookcheckOut;
-        this.barcode = barcode;
+        this.barcode = newBarcode;
+        this.studentId = 000000;
+    }//end of full Arg constructor
+
+    public Books(String title, String author, String condit, boolean BookcheckOut, int barcode, int studentId)
+    {
+        newBarcode++;
+        this.title = title;
+        this.author = author;
+        this.condit = condit;
+        this.BookcheckOut = BookcheckOut;
+        this.barcode = newBarcode;
         this.studentId = studentId;
     }//end of full Arg constructor
+
+    public boolean isBookcheckOut()
+    {
+        return BookcheckOut;
+    }
+
+    public void setBookcheckOut(boolean bookcheckOut)
+    {
+        BookcheckOut = bookcheckOut;
+    }
+
+    @Override
+    public String beingUsed()
+    {
+        return "Book "+title+" being used: "+BookcheckOut;
+    }
 
     @Override
     public void checkOut()
@@ -29,7 +58,7 @@ public class Books implements LibraryBooks
     }
 
     @Override
-    public void BoookReturn()
+    public void BookReturn()
     {
         BookcheckOut=false;
     }
