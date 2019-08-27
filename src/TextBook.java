@@ -30,10 +30,14 @@ public class TextBook implements LibraryBooks
         return BookcheckOut;
     }
 
-    public void setBookcheckOut(boolean bookcheckOut)
+    public void setIsBookcheckOut(boolean yes)
     {
-        BookcheckOut = bookcheckOut;
+        BookcheckOut=false;
     }
+
+
+
+
 
     @Override
     public String beingUsed()

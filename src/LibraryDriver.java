@@ -31,42 +31,10 @@ public class LibraryDriver
         TextBook[] textBooksinLibrary = {Government, Calculus, APLit};
         Books[] booksInLibrary = {CaptainUnderpants, Frankenstein, GreatGatsby, GregorTheOverlander, OfMiceAndMen, ThingsFallApart};
 
-
-        for (int i = 0; i < 20; i++)
-        {
-            int RanCom = (int) Math.random() * 9;
-            int RanTextBook = (int) Math.random() * 2;
-            int RanBook = (int) Math.random() * 5;
-            boolean CompInUSe = LibraryComp[RanCom].inUse;
-            boolean TBInUSe = textBooksinLibrary[RanCom].isBookcheckOut();
-            boolean BookInUSe = booksInLibrary[RanCom].isBookcheckOut();
-
-            LibraryComp[RanCom].setInUse(!CompInUSe);
-
-            LibraryComp[RanCom].setInUse(!TBInUSe);
-
-            LibraryComp[RanCom].setInUse(!BookInUSe);
-        }
-
-            int ii = 0;
-            int jj = 0;
-            int ll = 0;
-            for (Books a : booksInLibrary)
-            {
-                System.out.println(booksInLibrary[ii].beingUsed());
-                ii++;
-            }
-            for (TextBook a : textBooksinLibrary)
-            {
-                System.out.println(textBooksinLibrary[jj].beingUsed());
-                jj++;
-            }
-            for (Computers a : LibraryComp)
-            {
-                System.out.println(LibraryComp[ll].beingUsed());
-                ll++;
-            }
-
+        Computers temp = LibraryComp[2];
+        System.out.println(temp.beingUsed());
+        temp.setInUse(true);
+        System.out.println(temp.beingUsed());
 
     }
 }
