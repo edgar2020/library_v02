@@ -31,10 +31,34 @@ public class LibraryDriver
         TextBook[] textBooksinLibrary = {Government, Calculus, APLit};
         Books[] booksInLibrary = {CaptainUnderpants, Frankenstein, GreatGatsby, GregorTheOverlander, OfMiceAndMen, ThingsFallApart};
 
-        Computers temp = LibraryComp[2];
-        System.out.println(temp.beingUsed());
-        temp.setInUse(true);
-        System.out.println(temp.beingUsed());
+        for(int i=0;i<20;i++)
+        {
+            int tempComp = (int) (Math.random() * (LibraryComp.length));
+            LibraryComp[tempComp].setInUse(!LibraryComp[tempComp].isInUse());
+        }
+        for(int i=0;i<20;i++)
+        {
+            int tempBook = (int) (Math.random() * (booksInLibrary.length));
+            booksInLibrary[tempBook].setBookcheckOut(!booksInLibrary[tempBook].isBookcheckOut());
+        }
+        for(int i=0;i<20;i++)
+        {
+            int tempBook = (int) (Math.random() * (textBooksinLibrary.length));
+            textBooksinLibrary[tempBook].setIsBookcheckOut(!textBooksinLibrary[tempBook].isBookcheckOut());
+        }
+
+        for(int i=0;i<booksInLibrary.length;i++)
+        {
+            System.out.println(booksInLibrary[i].toString());
+        }
+        for(int i=0;i<textBooksinLibrary.length;i++)
+        {
+            System.out.println(textBooksinLibrary[i].toString());
+        }
+        for(int i=0;i<LibraryComp.length;i++)
+        {
+            System.out.println(LibraryComp[i].toString());
+        }
 
     }
 }

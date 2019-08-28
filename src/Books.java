@@ -69,4 +69,18 @@ public class Books implements LibraryBooks
     {
         condit=Condition;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Books{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", condit='" + condit + '\'' +
+                ", BookcheckOut=" + BookcheckOut +
+                ", barcode=" + barcode +
+                ", studentId=" + studentId +
+                ", newBarcode=" + newBarcode +
+                '}';
+    }
 }//end of class books

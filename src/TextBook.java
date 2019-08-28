@@ -63,5 +63,17 @@ public class TextBook implements LibraryBooks
         BookcheckOut=true;
     }
 
-
+    @Override
+    public String toString()
+    {
+        return "TextBook{" +
+                "Subject='" + Subject + '\'' +
+                ", Publisher='" + Publisher + '\'' +
+                ", condit='" + condit + '\'' +
+                ", BookcheckOut=" + BookcheckOut +
+                ", barcode=" + barcode +
+                ", studentId=" + studentId +
+                ", newBarcode=" + newBarcode +
+                '}';
+    }
 }
